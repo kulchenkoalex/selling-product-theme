@@ -7,6 +7,33 @@
  */
 define( 'SELLING_PRODUCT_THEME_VERSION' , '1.0' );
 
+
+    /*
+     * get_template_directory_uri()
+     * Получает URL текущей темы. Учитывает SSL. Не учитывает наличие дочерней темы. Не содержит закрывающий слэш.
+     * https://wp-kama.ru/function/get_template_directory_uri
+     */
+
+    $version = null;
+
+    wp_register_style(
+        'SellingProduct-core', //$handle
+        get_template_directory_uri() . '/css/core.css', // $src
+        array(), //$deps,
+        $version // $ver
+    );
+    wp_register_style(
+        'SellingProduct-skins', //$handle
+        get_template_directory_uri() . '/css/skins/red.css', // $src
+        array(), //$deps,
+        $version // $ver
+    );
+
+    wp_enqueue_style('SellingProduct-core');
+    wp_enqueue_style('SellingProduct-skins');
+
+
+
 if ( ! function_exists( 'selling_product_theme_setup' ) ) :
 
     function selling_product_theme_setup() {
@@ -25,7 +52,7 @@ if ( ! function_exists( 'selling_product_theme_setup' ) ) :
          * If you're building a theme based on selling_product, use a find and replace
          * to change 'selling_product' to the name of your theme in all the template files
          */
-        load_theme_textdomain( 'topshop', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'selling_product', get_template_directory() . '/languages' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
@@ -72,5 +99,5 @@ if ( ! function_exists( 'selling_product_theme_setup' ) ) :
         add_theme_support( 'title-tag' );
 
     }
-endif; // topshop_theme_setup
+endif; // selling_product_theme_setup
 add_action( 'after_setup_theme', 'selling_product_theme_setup' );
