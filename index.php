@@ -1,6 +1,15 @@
 <?php
 
-get_header();
+if ( is_home() ){
+    get_header('home');
+}
+elseif ( is_404() ) {
+    get_header('404');
+}
+else {
+    get_header();
+}
+
 ?>
 
 <?php if ( have_posts() ) : ?>
@@ -20,5 +29,11 @@ get_header();
 
 <?php
 
-get_footer();
+if ( is_home() ) :
+    get_footer('home');
+elseif ( is_404() ) :
+    get_footer('404');
+else :
+    get_footer();
+endif;
 ?>
