@@ -26,7 +26,6 @@ if ( has_post_thumbnail() ) {
                     } ?>
 
                 </div>
-
             </div>
 
         </div>
@@ -69,7 +68,35 @@ if ( has_post_thumbnail() ) {
     	</div><!-- .entry-content -->
 
     	<footer class="entry-footer">
-    		<?php get_footer(); ?>
+            <div class="entry-meta">
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>
+                    <span class="updated">
+                        <?php the_date(); ?>
+                    </span>
+                </span> <!-- .post-date -->
+
+                <span class="post-author">
+                    <i class="fa fa-user fa-fw"></i>
+                    <span class="vcard">
+                        <a class="fn url" href="<?php the_author_link(); ?>">
+                            <?php the_author(); ?>
+                        </a>
+                    </span>
+                </span> <!-- .post-author -->
+
+                <span class="post-categories">
+                    <i class="fa fa-folder fa-fw"></i>
+                    <?php the_category(' ');?>
+                </span> <!-- .post-categories -->
+
+                <span class="post-tags">
+                    <i class="fa fa-tags fa-fw"></i>
+                    <?php the_tags('', ' ', ''); ?>
+                </span> <!-- .post-tags -->
+
+            </div> <!-- .entry-meta -->
     	</footer><!-- .entry-footer -->
 
     </div>
