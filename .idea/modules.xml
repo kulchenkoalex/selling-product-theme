@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/selling-product-theme.iml" filepath="$PROJECT_DIR$/.idea/selling-product-theme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/selling-product-theme.git.iml" filepath="$PROJECT_DIR$/.idea/selling-product-theme.git.iml" />
     </modules>
   </component>
 </project>
