@@ -6,17 +6,17 @@ if ( has_post_thumbnail() ) {
     $has_img = '';
 } ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $has_img . ' blog-post-side-layout' ); ?>>
-    
+
     <?php
     if ( get_theme_mod( 'selling-product-blog-list-image-type' ) == 'blog-use-images-loop' ) : ?>
         <div class="post-loop-images">
-            
+
             <div class="post-loop-images-carousel-wrapper post-loop-images-carousel-wrapper-remove">
                 <div class="post-loop-images-prev"><i class="fa fa-angle-left"></i></div>
                 <div class="post-loop-images-next"><i class="fa fa-angle-right"></i></div>
-                
+
                 <div class="post-loop-images-carousel post-loop-images-carousel-remove">
-                    
+
                     <?php
                     foreach ( $images as $image ) {
                         $title = $image->post_title;
@@ -24,27 +24,27 @@ if ( has_post_thumbnail() ) {
                         <div><img src="<?php echo $thumbimage[0]; ?>" alt="<?php echo esc_html( $title ) ?>" /></div>
                     <?php
                     } ?>
-                
+
                 </div>
-                
+
             </div>
-            
+
         </div>
     <?php else : ?>
         <div class="post-loop-images">
             <?php echo get_the_post_thumbnail( get_the_ID(), 'selling_product_blog_img_side' ); ?>
         </div>
     <?php endif; ?>
-    
+
     <div class="post-loop-content">
-    
+
     	<header class="entry-header">
     		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 
     		<?php if ( 'post' == get_post_type() ) : ?>
     		<!--<div class="entry-meta">-->
-    			<?php /*selling_product_posted_on(); */?>
-    		<!--</div><!-- .entry-meta -->
+              <?php /*selling_product_posted_on(); */?>
+                <!--</div><!-- .entry-meta -->
     		<?php endif; ?>
     	</header><!-- .entry-header -->
 
@@ -71,8 +71,8 @@ if ( has_post_thumbnail() ) {
     	<footer class="entry-footer">
     		<?php get_footer(); ?>
     	</footer><!-- .entry-footer -->
-    
+
     </div>
-    
+
     <div class="clearboth"></div>
 </article><!-- #post-## -->
