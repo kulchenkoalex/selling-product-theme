@@ -40,7 +40,7 @@ function loadScriptSite()
 add_action( 'after_setup_theme', 'loadScriptSite' );
 
 function registerNavMenu() {
-    register_nav_menu( 'primary', 'Primary Menu', SELLING_PRODUCT_THEME_TEXTDOMAIN );
+    register_nav_menu( 'primary', __('Primary Menu', SELLING_PRODUCT_THEME_TEXTDOMAIN) );
 }
 add_action( 'after_setup_theme', 'registerNavMenu',100 );
 
