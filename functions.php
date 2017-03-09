@@ -40,6 +40,14 @@ function loadScriptSite()
 add_action( 'after_setup_theme', 'loadScriptSite' );
 
 function registerNavMenu() {
-    register_nav_menu( 'primary', 'Primary Menu' );
+    register_nav_menu( 'primary', 'Primary Menu', SELLING_PRODUCT_THEME_TEXTDOMAIN );
 }
-add_action( 'after_setup_theme', 'registerNavMenu' );
+add_action( 'after_setup_theme', 'registerNavMenu',100 );
+
+define("SELLING_PRODUCT_THEME_TEXTDOMAIN", 'selling-product-theme');
+
+
+function themeLocalization(){
+    load_theme_textdomain(SELLING_PRODUCT_THEME_TEXTDOMAIN, get_template_directory() . '/languages/');
+}
+add_action('after_setup_theme', 'themeLocalization');
