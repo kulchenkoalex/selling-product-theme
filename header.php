@@ -32,6 +32,9 @@
 
 
 <?php
+if( $logo = get_custom_logo() ){
+    echo $logo;
+}
 $args = array(
     'theme_location' => 'primary',        // (string) Расположение меню в шаблоне. (указывается ключ которым было зарегистрировано меню в функции register_nav_menus)
     'menu'            => '',              // (string) Название выводимого меню (указывается в админке при создании меню, приоритетнее
@@ -53,3 +56,5 @@ $args = array(
 );
 wp_nav_menu($args);
 ?>
+
+
