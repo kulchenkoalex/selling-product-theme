@@ -54,7 +54,7 @@ nav:after {
 	#041E34 80%, #041E34 100%);
 }
 ul {
-	width: 660px;
+	width: 1400px;
 	margin: 0 auto;
 	padding-left: 0;
 	list-style: none;
@@ -62,7 +62,7 @@ ul {
 }
 li {
 	float: left;
-	width: 25%;
+	width: 16%;
 
 	text-decoration: none;
 	text-align: center;
