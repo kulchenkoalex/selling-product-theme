@@ -3,13 +3,13 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Selling-product-theme  v1.0.0\n"
+"Project-Id-Version: Selling-product-theme v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2017-03-09 14:12+0200\n"
+"POT-Creation-Date: 2017-03-09 15:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <kulchenko.alexey@gmail.com>\n"
-"Language: ru_RU\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,29 +27,29 @@ msgstr ""
 
 #: functions.php:43
 msgid "Primary Menu"
-msgstr "Основное меню"
+msgstr "Головне меню"
 
 #: template-parts/content-none.php:13
 msgid "Nothing Found"
-msgstr "Ничего не найдено"
+msgstr "Нічого не знайдено"
 
 #: template-parts/content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните здесь</"
-"a>."
+"Готові опублікувати свій перший запис? <a href=\\\"%1$s\\\">Розпочніть "
+"тут</a>."
 
 #: template-parts/content-none.php:34
 msgid "Search Again"
-msgstr "Искать снова"
+msgstr "Шукати знову"
 
 #: template-parts/content.php:57
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Продолжить чтение %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Продовжити читати %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: template-parts/content.php:64
 msgid "Pages:"
-msgstr "Страницы:"
+msgstr "Сторінки:"
