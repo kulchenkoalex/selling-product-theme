@@ -14,7 +14,7 @@
      * https://wp-kama.ru/function/get_template_directory_uri
      */
 
-
+if (! is_admin()){
 function loadScriptSite()
 {
     $version = null;
@@ -59,3 +59,4 @@ add_theme_support( 'custom-header', array(
 ) );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support('custom-logo');
+}
