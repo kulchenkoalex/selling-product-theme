@@ -119,3 +119,16 @@ function renderSubMenu(){
 function renderThemeMenu(){
     _e('Sub theme Selling Product', SELLING_PRODUCT_THEME_TEXTDOMAIN);
 }
+
+function register_my_widgets(){
+    register_sidebar( array(
+        'name' => "Правая боковая панель сайта",
+        'id' => 'right-sidebar',
+        'description' => 'Эти виджеты будут показаны в правой колонке сайта',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => "</li>\n",
+        'before_title' => '<h2>',
+        'after_title' => '</h2>'
+    ) );
+}
+add_action( 'widgets_init', 'register_my_widgets' );
