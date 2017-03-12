@@ -95,9 +95,17 @@ function addAdminMenu(){
             SELLING_PRODUCT_THEME_TEXTDOMAIN
         ),
         'manage_options',
-        'step_by_step_theme_control_sub_menu',
+        'selling_product_theme_control_sub_menu',
         'renderSubMenu'
         );
+
+      $themeMenuPage = add_theme_page(
+        __('Sub theme Selling Product', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+        __('Sub theme Selling Product', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+        'read',
+        'selling_product_theme_control_sub_theme_menu',
+        'renderThemeMenu'
+    );
 }
 
 function renderMainMenu(){
@@ -106,4 +114,8 @@ function renderMainMenu(){
 
 function renderSubMenu(){
     _e('Sub Selling Product theme page', SELLING_PRODUCT_THEME_TEXTDOMAIN);
+}
+
+function renderThemeMenu(){
+    _e('Sub theme Selling Product', SELLING_PRODUCT_THEME_TEXTDOMAIN);
 }
