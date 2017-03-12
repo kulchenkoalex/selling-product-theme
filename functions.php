@@ -81,8 +81,29 @@ function addAdminMenu(){
         get_template_directory_uri() .'/images/main-menu.png',
         3
     );
+
+     $subMenuPage = add_submenu_page(
+            SELLING_PRODUCT_THEME_TEXTDOMAIN,
+        _x(
+            'Sub Selling Product theme',
+            'admin menu page' ,
+            SELLING_PRODUCT_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Sub Selling Product theme',
+            'admin menu page' ,
+            SELLING_PRODUCT_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        'step_by_step_theme_control_sub_menu',
+        'renderSubMenu'
+        );
 }
 
 function renderMainMenu(){
     _e('Selling Product theme page', SELLING_PRODUCT_THEME_TEXTDOMAIN);
+}
+
+function renderSubMenu(){
+    _e('Sub Selling Product theme page', SELLING_PRODUCT_THEME_TEXTDOMAIN);
 }
