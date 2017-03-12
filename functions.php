@@ -38,6 +38,7 @@ function loadScriptSite()
 
 }
 add_action( 'after_setup_theme', 'loadScriptSite' );
+}
 
 function registerNavMenu() {
     register_nav_menu( 'primary', __('Primary Menu', SELLING_PRODUCT_THEME_TEXTDOMAIN) );
@@ -59,4 +60,29 @@ add_theme_support( 'custom-header', array(
 ) );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support('custom-logo');
+
+
+add_action('admin_menu', 'addAdminMenu');
+function addAdminMenu(){
+    $mainMenuPage = add_menu_page(
+        _x(
+            'Selling Product theme',
+            'admin menu page' ,
+            SELLING_PRODUCT_THEME_TEXTDOMAIN
+        ),
+        _x(
+            'Selling Product theme',
+            'admin menu page' ,
+            SELLING_PRODUCT_THEME_TEXTDOMAIN
+        ),
+        'manage_options',
+        SELLING_PRODUCT_THEME_TEXTDOMAIN,
+        'renderMainMenu',
+        get_template_directory_uri() .'/images/main-menu.png',
+        3
+    );
+}
+
+function renderMainMenu(){
+    _e('Selling Product theme page', SELLING_PRODUCT_THEME_TEXTDOMAIN);
 }
