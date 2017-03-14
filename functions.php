@@ -155,7 +155,7 @@ add_action('widgets_init', create_function('', 'return register_widget("widgets\
 
 add_action('customize_register','my_customize_register');
 function my_customize_register( $wp_customize ) {
-  $wp_customize->add_panel();
+ /* $wp_customize->add_panel();
   $wp_customize->get_panel();
   $wp_customize->remove_panel();
  
@@ -169,5 +169,74 @@ function my_customize_register( $wp_customize ) {
  
   $wp_customize->add_control();
   $wp_customize->get_control();
-  $wp_customize->remove_control();
+  $wp_customize->remove_control();*/
+
+
+   // Section
+    $wp_customize->add_section('selling_product_my_section', array(
+        'title' => __('My section sellingproduct', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+        'priority' => 10,
+        'description' => __('My section description', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+    ));
+    // Setting
+    $wp_customize->add_setting("selling_product_my_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "selling_product_my_settings",
+        array(
+            "label" => __("Title", SELLING_PRODUCT_THEME_TEXTDOMAIN),
+            "section" => "selling_product_my_section",
+            "settings" => "selling_product_my_settings",
+            "type" => "input",
+        )
+    ));
+    // Setting
+    $wp_customize->add_setting("selling_product_my_test_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control( 'selling_product_my_test_settings', array(
+        'label'       => __("Description", SELLING_PRODUCT_THEME_TEXTDOMAIN),
+        'section'     => 'selling_product_my_section',
+        'type'        => 'textarea',
+    ) );
+    // Setting
+    $wp_customize->add_setting("selling_product_my_img_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'selling_product_my_img_settings',
+            array(
+                'label'      => __( 'Upload a logo', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+                'section'    => 'selling_product_my_section',
+                'settings'   => 'selling_product_my_img_settings',
+            )
+        )
+    );
+    // Setting
+    $wp_customize->add_setting("selling_product_my_upload_settings", array(
+        "default" => "",
+        "transport" => "postMessage",
+    ));
+    // Control
+    $wp_customize->add_control(
+        new WP_Customize_Upload_Control(
+            $wp_customize,
+            'selling_product_my_upload_settings',
+            array(
+                'label'      => __( 'Upload', SELLING_PRODUCT_THEME_TEXTDOMAIN),
+                'section'    => 'selling_product_my_section',
+                'settings'   => 'selling_product_my_upload_settings'
+            )
+        )
+    );
 }
