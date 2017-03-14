@@ -152,3 +152,22 @@ add_action( 'widgets_init', 'true_remove_default_widget', 20 );
 
 require get_template_directory().'/widgets/SellingProductWidget.php';
 add_action('widgets_init', create_function('', 'return register_widget("widgets\SellingProductWidget");'));
+
+add_action('customize_register','my_customize_register');
+function my_customize_register( $wp_customize ) {
+  $wp_customize->add_panel();
+  $wp_customize->get_panel();
+  $wp_customize->remove_panel();
+ 
+  $wp_customize->add_section();
+  $wp_customize->get_section();
+  $wp_customize->remove_section();
+ 
+  $wp_customize->add_setting();
+  $wp_customize->get_setting();
+  $wp_customize->remove_setting();
+ 
+  $wp_customize->add_control();
+  $wp_customize->get_control();
+  $wp_customize->remove_control();
+}
